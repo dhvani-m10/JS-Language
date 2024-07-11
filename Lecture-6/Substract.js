@@ -5,7 +5,7 @@ const substract = () => {
     let num3 = document.getElementById('num3').value;
     let num4 = document.getElementById('num4').value;
 
-    let res = Number(num1) + Number(num2) + Number(num3) - num4;
+    let res = num1 - num2 - num3 - num4;
 
     document.getElementById('res').innerHTML = `After Substraction : ${res}`
 }
