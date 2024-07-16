@@ -1,6 +1,7 @@
 const uimaker = () => {
 
     document.getElementById('body').innerHTML = ''
+    let tsalary = 0
 
     for (let i = 0; i < users.length; i++) {
         let tr = document.createElement('tr')
@@ -21,10 +22,16 @@ const uimaker = () => {
             td5.innerHTML = "Senior";
         }
         let td6 = document.createElement('td')
+        tsalary += parseFloat(users[i].salary)
         td6.innerHTML = users[i].salary;
+
         tr.append(td,td1, td2, td3, td4, td5, td6)
         document.getElementById('body').append(tr)
     }
+
+    document.getElementById('totalEmp').innerText = `Total Emp :  ${users.length}`
+    document.getElementById('totalSalary').innerText = `Total Salary :  ${tsalary}`
+
 
 }
 
