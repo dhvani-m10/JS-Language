@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form id="userData">
+
+        <label for="">Name : </label>
+        <input type="text" id="name" placeholder="Enter Name" required><br><br>
+
+        <label for="">GRID : </label>
+        <input type="number" id="grid" placeholder="Enter GRID" required><br><br>
+
+        <label for="">Course : </label>
+        <select name="Course" id="course" value="course">
+            <option value="Full Stack" selected>Full Stack</option>
+            <option value="Flutter">Flutter</option>
+            <option value="GIM">GIM</option>
+
+        </select>
+        <br><br>
+
+        <label for="">Number : </label>
+        <input type="text" id="number" placeholder="Enter Number" required><br><br>
+
+        <label for="">Fee : </label>
+        <select name="Fee" id="fee" value="fee">
+        <option value="Full Stack-95000" selected>Full Stack-95000</option>
+        <option value="Flutter-92000">Flutter-92000</option>
+        <option value="GIM-60000">GIM-60000</option>
+        </select>
+        <br><br>
+
+        <input type="submit" value="Sign Up">
+    </form>
+    <br>
+    <br>
+    <br>
+
+    <table border="2">
+        <thead>
+            <tr>
+                <th scope="101">Name</th>
+                <th scope="101">GRID</th>
+                <th scope="101">Course</th>
+                <th scope="101">Number</th>
+                <th scope="101">Fee</th>
+                <th scope="101">delete</th>
+
+            </tr>
+        </thead>
+        <tbody id="tbody">
+
+
+        </tbody>
+    </table>
+
+    <br>
+    <br>
+
+    <table border="2">
+        <thead>
+            <tr>
+                <th scope="101">Course</th>
+                <th scope="101">Count</th>
+                <th scope="101">Total Fees</th>
+
+            </tr>
+        </thead>
+        <tbody id="body">
+
+
+        </tbody>
+    </table>
+
+    
+
+
+</body>
+<script src="index.js"></script>
+</html>
