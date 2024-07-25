@@ -29,6 +29,23 @@ const uiMaker = () => {
         document.getElementById("tbody").append(tr);
     }
 }
+
+const Sales=()=>{
+    document.getElementById("body").innerHTML = "";
+    for (let i = 0; i < users.length; i++) {
+        let tr = document.createElement("tr");
+        let td1 = document.createElement("td");
+        td1.innerHTML = users[i].name;
+        let td2 = document.createElement("td");
+        td2.innerHTML = users[i].grid;
+        let td3 = document.createElement("td");
+        td3.innerHTML = users[i].course;
+
+        tr.append(td1, td2, td3);
+        document.getElementById("tbody").append(tr)
+    }
+
+}
 const HandleData = (e) => {
     e.preventDefault();
 
@@ -70,5 +87,7 @@ const HandleData = (e) => {
     console.log(user);
     uiMaker();
 }
+
+
 
 document.getElementById('userData').addEventListener("submit", HandleData)
