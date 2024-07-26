@@ -10,15 +10,18 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
+            height: 120vh;
         }
 
         input {
-            margin: 10px 0;
             padding: 10px;
             width: 100%;
             max-width: 300px;
+        }
+
+        input[type="radio"],
+        input[type="radio"] {
+            width: 5%;
         }
 
         .error {
@@ -32,6 +35,13 @@
     <form id="userData">
         <label for="">Username : </label>
         <input type="text" name="" id="username" placeholder="username" required /><br><br>
+        
+        <label for="">Gender : </label>
+        <input type="radio" id="male" name="gender" value="male" > Male
+        <input type="radio" id="female" name="gender" value="female"> Female
+        <input type="radio" id="other" name="gender" value="other"> Other
+        <br><br>
+    
 
         <label for="">Email : </label>
         <input type="email" name="" id="email" placeholder="email" required /><br><br>
@@ -41,6 +51,19 @@
 
         <label for="">Password : </label>
         <input type="text" id="password" placeholder="password" required /><br><br>
+
+        <label for="">City : </label>
+        <select id="city" required>
+            <option value=""></option>
+            <option value="Vadodara">Vadodara</option>
+            <option value="Surat">Surat</option>
+            <option value="Ahmedabad">Ahmedabad</option>
+            <option value="Rajkot">Rajkot</option>
+            <option value="Bhavnagar">Bhavnagar</option>
+        </select>
+        <br>
+        <br>
+
 
         <input type="submit" value="signUp" />
     </form>
