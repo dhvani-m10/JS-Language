@@ -1,11 +1,10 @@
 
 class Manager {
     constructor(name, department) {
-       // super(name);
-       this.name=name; 
-        this.salary = 0; 
-        this.department = department; 
-        // this.leaveStatus = 'none'; 
+        this.name = name;
+        this.salary = 0;
+        this.department = department;
+        this.leaveStatus = 'none';
     }
 
     AEmployeeLeave() {
@@ -26,8 +25,8 @@ class Manager {
 
 class Employee extends Manager {
     constructor(name) {
-        super(name); 
-        this.salary = 0; 
+        super(name);
+        this.salary = 0;
     }
 
     requestLeave() {
@@ -42,7 +41,7 @@ class Employee extends Manager {
 
 let m = new Manager('Manager', 'Marketion');
 m.AEmployeeLeave();
-m.getManagerSalary(150000); 
+m.getManagerSalary(150000);
 
 let e = new Employee('Employee');
 e.getSalary(70000);
