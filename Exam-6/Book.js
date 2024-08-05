@@ -72,13 +72,17 @@ class Book {
 
 }
 const b1 = new Book('The Outsiders', 'SE Hinton', 500, 250, 50);
-console.log("AUTHOR NAME : ",b1.getAuthor()); 
+console.log(b1);
+console.log("AUTHOR NAME : ", b1.getAuthor());
+console.log("PRICE : ", b1.getPrice());
+console.log("RENTAL PRICE : ", b1.getRentalprice());
 
-b1.buyBook(); 
-b1.checkAvailability(); 
 
-b1.rentBook(); 
-b1.checkAvailability(); 
+b1.buyBook();
+b1.checkAvailability();
 
-b1.returnBook(); 
+b1.rentBook();
+b1.checkAvailability();
+
+b1.returnBook();
 b1.checkAvailability(); 
