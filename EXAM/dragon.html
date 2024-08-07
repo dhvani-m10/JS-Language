@@ -8,108 +8,116 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color:lavenderblush;
-            /* display: flex; */
-            /* align-items: center; */
-            /* flex-direction: column; */
+            margin: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #9ebad9;
         }
 
         img {
-            border-radius: 10px;
-            margin-bottom: 20px;
+            height:750px;
+            width:100%;
+
         }
 
         form {
-            background-color: #e3c2c2;
+            margin-top: 20px;
+            margin-bottom: 2px;
+            background: rgb(151, 170, 209);
             padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        th, td {
-            padding: 10px;
+            border-radius: 8px;
+            width: 300px;
         }
 
         label {
+            display: block;
+            margin-bottom: 5px;
             font-weight: bold;
         }
 
-        input[type="text"], input[type="number"], select {
+        input[type="text"],
+        input[type="number"],
+        select {
+            width: 100%;
             padding: 5px;
+            margin-bottom: 10px;
             border: 1px solid #ccc;
-            border-radius: 5px;
-            box-sizing: border-box;
+            border-radius: 4px;
         }
+
+        table {
+            width: 80%;
+            margin-bottom: 30px;
+            border-collapse: collapse;
+            padding: 20px;
+        }
+
         input[type="submit"] {
-            background-color: #343a40;
-            color: #fff;
-            border: none;
             padding: 10px 20px;
-            border-radius: 5px;
+            background-color: #4c70af;
+            color: white;
+            border: none;
+            border-radius: 4px;
         }
 
         input[type="submit"]:hover {
-            background-color: #495057;
+            background-color: #4556a0;
         }
-
     </style>
 
 </head>
 
 <body>
-    <img src="drgn.avif" height="300" width="980">
+    <img src="d2.jpg" >
 
-    <form action="" method="">
-        <table border="1">
-            <tr>
-                <td><label>Name </label></td>
-                <td><input type="text" name="" id="name" placeholder="Enter Name"></td>
-            </tr>
-            <tr>
-                <td><label>Colour </label></td>
-                <td><select name="" id="color">
-                        <option value=""></option>
-                        <option value="Blue">Blue</option>
-                        <option value="Red">Red</option>
-                        <option value="Green">Green</option>
-                        <option value="Grey">Grey</option>
+    <form id="userdata">
+        <label>Name </label>
+        <input type="text" name="" id="name" placeholder="Enter Name"><br><br>
 
-                    </select></td>
-            </tr>
+        <label>Colour </label>
+        <select name="" id="color">
+            <option value=""></option>
+            <option value="Blue">Blue</option>
+            <option value="Red">Red</option>
+            <option value="Green">Green</option>
+            <option value="Grey">Grey</option>
 
-            <tr>
-                <td><label>Category</label></td>
-                <td><select name="" id="category">
-                        <option value=""></option>
-                        <option value="Figurines">Figurines</option>
-                        <option value="New Releases">New Releases</option>
-                        <option value="Puzzles">Puzzles</option>
-                    </select>
-            </tr>
+        </select>
+        <br><br>
 
-            <tr>
-                <td><label>Quantity </label></td>
-                <td><input type="number" id="quantity" placeholder="Enter Quantity of dragon"></td>
-            </tr>
+        <label>Category</label>
+        <select name="" id="category">
+            <option value=""></option>
+            <option value="Figurines">Figurines</option>
+            <option value="New Releases">New Releases</option>
+            <option value="Puzzles">Puzzles</option>
+        </select>
 
-            <tr>
-                <td><label>Price</label></td>
-                <td><select name="" id="price">
-                    <option value=""></option>
-                    <option value="600">600</option>
-                    <option value="799">799</option>
-                    <option value="850">850</option>
-                    <option value="900">900</option>
-                </select>
-            </tr>
+        <br><br>
 
-            <tr><td colspan="2" style="text-align: center;">
-                <input type="submit" id="submit" value="submit">
-            </td></tr>
-        </table>
+        <label>Quantity </label>
+        <input type="number" id="quantity" placeholder="Enter Quantity of dragon">
+        <br><br>
+
+        <label>Price</label>
+        <select name="" id="price">
+            <option value=""></option>
+            <option value="600">600</option>
+            <option value="799">799</option>
+            <option value="850">850</option>
+            <option value="900">900</option>
+        </select>
+        <br><br>
+        <input type="submit" id="submit" value="submit">
+
     </form>
-
-    <table border="1">
+    <br>
+    <br>
+    <br>
+    <table border="3">
         <thead>
             <tr>
                 <th scope="101">Name</th>
@@ -117,14 +125,17 @@
                 <th scope="101">Category</th>
                 <th scope="101">Quantity</th>
                 <th scope="101">Price</th>
+                <th scope="101">Remove</th>
             </tr>
         </thead>
+       
         <tbody id="tbody">
-
 
         </tbody>
 
 </body>
 
-</html>
+<script src="./dragon.js"></script>
 
+
+</html>
