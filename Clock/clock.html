@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+            font-family: 'Times New Roman', Times, serif;
+            background: linear-gradient(to right, #10253a, #839bab);
+            color: white;
+        }
+
+        #clock {
+            padding: 30px;
+            border-radius: 10px;
+            background: #10253a;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        }
+
+        #hr {
+            font-size: 4em;
+            font-weight: bold;
+        }
+
+        #day,
+        #d {
+            text-align: center;
+            font-size: 1.5em;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="clock">
+        <div id="hr"></div>
+        <div id="day"></div>
+        <div id="d"></div>
+    </div>
+</body>
+<script src="clock.js"></script>
+
+</html>
