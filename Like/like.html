@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        img {
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .button {
+            display: inline-block;
+            margin: 15px;
+        }
+
+        .button button {
+            font-size: 1.5em;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #7189a3;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .button button:hover {
+            background-color: #0056b3;
+        }
+
+        .button h3 {
+            font-size: 1.5em;
+            margin-top: 10px;
+            color: #333;
+        }
+
+        @media (max-width: 600px) {
+            img {
+                width: 100%;
+                height: auto;
+            }
+
+            .button button {
+                width: 100%;
+                font-size: 1.2em;
+            }
+
+            .button h3 {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+<h1>Instagram</h1>
+<img src="sky.jpg" alt="" height="400px" width="350px">
+<br>
+<div class="button">
+    <button id="follow">Follow</button>
+    <h3 id="Follow">0</h3>
+</div>
+
+<div class="button">
+    <button id="lk">❤️</button>
+    <h3 id="like">0</h3>
+</div>
+
+<div class="button">
+    <button id="cmt">🗨</button>
+    <h3 id="comment">0</h3>
+</div>
+
+<div class="button">
+    <button id="shr">➤</button>
+    <h3 id="share">0</h3>
+</div>
+
+<script src="./like.js"></script>
+
+</html>
