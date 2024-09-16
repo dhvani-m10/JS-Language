@@ -1,8 +1,5 @@
-
 const getValue = (className) => {
+    return document.querySelector(className).value;
+};
 
-    return document.querySelector(className).value
-}
-
-
-export default getValue
+export default getValue;
