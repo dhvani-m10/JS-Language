@@ -12,10 +12,35 @@
 <body>
     <div class="container-fluid">
         <div id="navbar"></div>
-       </div>
+       <!-- </div>
        <div class="btn-group" role="group">
         <button type="button"  id="lth" class="btn btn-outline-primary">LTH</button>
         <button type="button"  id="htl" class="btn btn-outline-primary">HTL</button>
+      </div> -->
+      <div id="navbar"></div>
+     
+
+      <div class="sort-options">
+          <button id="lth">Low to High</button>
+          <button id="htl">High to Low</button>
+      </div>
+
+      <div id="userData">
+        <table border="2">
+            <thead>
+                <tr>
+                    <th scope="101">Student Name</th>
+                    <th scope="101">Email</th>
+                    <th scope="101">Contact number</th>
+                    <th scope="101">DOB</th>
+                    <th scope="101">Course</th>
+                    <th scope="101">Fee</th>
+
+                </tr>
+            </thead>
+            <tbody id="tbody">
+            </tbody>
+        </table>
       </div>
 </body>
 <script type="module" src="/js/home.js"></script>
