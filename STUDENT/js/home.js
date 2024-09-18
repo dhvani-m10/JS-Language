@@ -1,33 +1,27 @@
 
+
 import Navbar from "../component/Navbar.js";
 
 document.getElementById("navbar").innerHTML = Navbar();
 
 let users = JSON.parse(localStorage.getItem("users")) || [];
 
-
-const mapper=(data)=>{
-  document.getElementById("tbody").innerHTML=""
-  students.map((list,index)=>
-      {
-      let name = document.createElement("h3");
-      name.innerHTML = list.name;
-      let email = document.createElement("p");
-      email.innerHTML = list.email;
-      let phone = document.createElement("p");
-      phone.innerHTML = list.phone;
-      let dateOfBirth = document.createElement("p");
-      dateOfBirth.innerHTML = list.dateOfBirth;
-      let course = document.createElement("p");
-      course.innerHTML = list.course;
-      let fee = document.createElement("p");
-      fee.innerHTML = list.fee;
-      let div=document.createElement("div")
-      div.append(name, email, phone, dateOfBirth, course, fee);
-      document.getElementById("tbody").append(div);
-
+const mapper = (data) => {
+  document.getElementById("tbody").innerHTML = "";
+  data.forEach((user) => {
+    const row = document.createElement("tr");
+    row.innerHTML = `
+      <td>${user.name}</td>
+      <td>${user.email}</td>
+      <td>${user.phone}</td>
+      <td>${user.dateOfBirth}</td>
+      <td>${user.course}</td>
+      <td>${user.fee}</td>
+    `;
+    document.getElementById("tbody").appendChild(row);
   });
 };
+
 mapper(users);
 
 const handleSort = (orderBy) => {
