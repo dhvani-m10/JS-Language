@@ -1,21 +1,27 @@
-import getValue from "../components/helper.js";
 
-// let users = JSON.parse(localStorage.getItem("users")) || []
-// const handleData=(e)=>{
-//     e.preventDefault();
+import { getVal } from "../components/helper.js";
+import Navbar from "../components/Navbar.js";
 
-//     let user={
-//         username:getValue('.username'),
-//         email:getValue('.email'),
-//         password:getValue('.password'),
+document.getElementById("navbar").innerHTML=Navbar();
 
-//         username:getValue('.username'),
-        
-//     };
-//     users.push(user);
-//     localStorage.setItem("users", JSON.stringify(users));
+let users=JSON.parse(localStorage.getItem("users"))||[];
 
-//     window.location.href="./index1.html"
-// }
+const handleData=(e)=>{
+    e.preventDefault();
 
-document.querySelector('userData').addEventListener("submit",handleData);
+    let user={
+        username : getVal(".username"),
+        email : getVal(".email"),
+        password : getVal(".password"),
+
+    };
+    // console.log(user);
+    
+    users.push(user);
+    localStorage.setItem("users",JSON.stringify(users));
+
+    alert("data stored successfully!"); 
+    window.location.href="/index1.html"
+}
+
+document.querySelector('#userData').addEventListener("submit",handleData);

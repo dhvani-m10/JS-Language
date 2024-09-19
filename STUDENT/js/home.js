@@ -1,5 +1,6 @@
 
 
+import getValues from "../component/helper.js";
 import Navbar from "../component/Navbar.js";
 
 document.getElementById("navbar").innerHTML = Navbar();
@@ -18,7 +19,7 @@ const mapper = (data) => {
       <td>${user.course}</td>
       <td>${user.fee}</td>
     `;
-    document.getElementById("tbody").appendChild(row);
+    document.getElementById("tbody").append(row);
   });
 };
 
@@ -36,3 +37,42 @@ const handleSort = (orderBy) => {
 
 document.getElementById("lth").addEventListener("click", () => handleSort("lth"));
 document.getElementById("htl").addEventListener("click", () => handleSort("htl"));
+
+
+const handleCourse = (course) => {
+  let temp = users.filter((ele) => ele.course == course);
+  mapper(temp);
+};
+
+document
+  .getElementById("it")
+  .addEventListener("click", () => handleCourse("Information Technology"));
+document
+  .getElementById("cs")
+  .addEventListener("click", () => handleCourse("Computer Science"));
+
+document
+  .getElementById("bt")
+  .addEventListener("click", () => handleCourse("Bio Technology"));
+document
+  .getElementById("mb")
+  .addEventListener("click", () => handleCourse("Micro Biology"));
+
+  
+const search = (e) => {
+  e.preventDefault();
+
+  let searchValue = getValues("#search");
+  let temp = users.filter((ele) => ele.name.toLowerCase().includes(searchValue.toLowerCase()));
+  mapper(temp);
+
+};
+
+document.getElementById("searching").addEventListener("submit", search);
+
+
+document.getElementById("search").addEventListener("keypress", (e) => {
+if(e.key=="Enter"){
+  
+}
+});

@@ -1,0 +1,19 @@
+
+  #productList {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+  #productList img {
+    width: 80%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  #filters button {
+    margin: 9px;
+    padding: 4px 9px;
+  }

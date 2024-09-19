@@ -31,5 +31,6 @@ users.push(user);
   } else {
     alert('Please fill in all fields');
   }
+
 };
 document.querySelector("#userData").addEventListener("submit", handleData)
