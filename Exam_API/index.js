@@ -1,45 +1,85 @@
-console.log("starting");
+let products = []; 
 
+const ApiData = (data) => {
+    document.getElementById("product-list").innerHTML = "";
+
+    data.products.map((ele) => {
+        let image = document.createElement('img');
+        image.src = ele.thumbnail;
+
+        let title = document.createElement('h3');
+        title.innerHTML = ele.title;
+
+        let price = document.createElement("p");
+        price.innerHTML = `$${ele.price}`;
+
+        let category = document.createElement("p");
+        category.innerHTML = ele.category;
+
+        let rate = document.createElement("p");
+        rate.innerHTML = `Rating: ${ele.rating}`;
+
+        let div = document.createElement("div");
+        div.style.cursor="pointer"
+        div.addEventListener("click", ()=>{
+            localStorage.setItem("id", ele.id);
+        })
+        div.append(image, title, price, category, rate);
+
+        document.getElementById("product-list").append(div);
+    });
+}
 
 const getData = async () => {
-    try {
-        let req = await fetch("https://dummyjson.com/products");
-        let result = await req.json();
-        console.log(result);
-        mapper(result.products); 
-    } catch (error) {
-        console.error("Error fetching data:", error);
-    }
-};
+        let req = await fetch("https://dummyjson.com/products/");
+        let res = await req.json();
+        products = res; 
+        ApiData(products);
+  
+}
 
 getData();
 
-console.log("setting stat");
 
-const mapper = (data) => {
-    data.map((item) => {
-        let productContainer = document.createElement("div");
-        productContainer.className = "product";
+const search = (e) => {
+    e.preventDefault();
 
-        let title = document.createElement("h2");
-        title.innerHTML = item.title;
-
-        let img = document.createElement("img");
-        img.src = item.image;
-        img.alt = item.title;
-
-        let price = document.createElement("p");
-        price.innerHTML = `Price: ${item.price}`;
-
-        let category = document.createElement("p");
-        category.innerHTML = `Category: ${item.category}`;
-
-        let rating = document.createElement("p");
-        rating.innerHTML = `Rating: ${item.rating}`;
-
-        productContainer.append(title, img, price, category, rating);
-        document.getElementById("product").append(productContainer);
-    });
+    let searchValue = document.getElementById("Search").value;
+    let temp = products.products.filter((ele) => ele.title.toLowerCase().includes(searchValue.toLowerCase()));
+    ApiData({ products: temp });
 };
 
-console.log("ending");
+document.getElementById("Searching").addEventListener("submit", search);
+
+document.getElementById("Search").addEventListener("keypress", (e) => {
+    if(e.key=="Enter"){
+    }
+});
+
+
+const HandleFilter = (category) => {
+    let temp = products.products.filter((ele) => ele.category === category);
+    ApiData({ products: temp });
+}
+
+
+document.getElementById("groceries").addEventListener("click" , ()=> HandleFilter("groceries"))
+document.getElementById("furniture").addEventListener("click", ()=>  HandleFilter("furniture"))
+document.getElementById("beauty").addEventListener("click" ,()=>  HandleFilter("beauty"))
+document.getElementById("fragrances").addEventListener("click" ,()=>  HandleFilter("fragrances"))
+
+
+const HandlePrice = (order) => {
+    let temp;
+    if (order === "LTH") {
+        temp = products.products.sort((a, b) => a.price - b.price);
+    } else {
+        temp = products.products.sort((a, b) => b.price - a.price);
+    }
+    ApiData({ products: temp });
+}
+
+
+
+document.getElementById("lth").addEventListener("click", () => HandlePrice("LTH"));
+document.getElementById("htl").addEventListener("click", () => HandlePrice("HTL"));
