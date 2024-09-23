@@ -1,9 +1,7 @@
-
-
 import getValues from "../component/helper.js";
 import Navbar from "../component/Navbar.js";
 
-document.getElementById("navbar").innerHTML = Navbar();
+document.getElementById("navbar").innerHTML = Navbar()
 
 let users = JSON.parse(localStorage.getItem("users")) || [];
 
