@@ -19,6 +19,13 @@ const ApiData = (data) => {
         let rate = document.createElement("p");
         rate.innerHTML = `Rating: ${ele.rating}`;
 
+        if (ele.rating > 4) {
+            rate.style.color = "green";
+        }
+         else {
+            rate.style.color = "red";
+        }
+
         let div = document.createElement("div");
         div.style.cursor="pointer"
         div.addEventListener("click", ()=>{
